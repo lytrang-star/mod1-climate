@@ -1,22 +1,16 @@
-# Climate Module
+# Exploration of Ice Sheet
 
 <!-- EDIT with your badge link -->
 [![Reproducibility Check](https://github.com/espm-157/climate-python-template/actions/workflows/main.yml/badge.svg)](https://github.com/espm-157/climate-python-template/actions/workflows/main.yml)
 
 ## Team Members
 
-🦸
-🦹
+🦸 Trang Ly <lytrang@berkeley.edu>
+🦹 Jiyun Ahn 
 
-## 🎓 Learning Objectives
 
-:octocat: Use of GitHub  
-:snake: Use of Jupyter Notebooks  
-:abcd: Accessing tabular data  
-📈 Data visualization  
-🔍 Verifying code you did not write  
-🗄 Working with data larger than memory  
-🌡️ Become familiar with data on global climate change  
+#Our exploration of artic ice sheet change
+
 
 ## 📖 Content Overview
 
@@ -51,12 +45,7 @@ We work in plan mode throughout this module: you review and approve what the mod
 proposes before it runs.
 
 ## Data sources
-
-- NOAA Mauna Loa CO2 record — <https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt>
 - NSIDC Arctic sea ice extent (G02135) — <https://nsidc.org/data/G02135>
-- EXIOBASE 3, cloud-optimized Parquet — <https://source.coop/youssef-harby/exiobase-3>
-- Our World in Data CO2 — <https://github.com/owid/co2-data>
-- Vostok ice core — <https://doi.org/10.3334/CDIAC/ATG.009>
 
 ## Setup
 

@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unit I: Climate Change Module</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="climate_files/libs/clipboard/clipboard.min.js"></script>
+<script src="climate_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="climate_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="climate_files/libs/quarto-html/popper.min.js"></script>
+<script src="climate_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="climate_files/libs/quarto-html/anchor.min.js"></script>
+<link href="climate_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="climate_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="climate_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="climate_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="climate_files/libs/bootstrap/bootstrap-4ad124ba1f44f51c43ae21f46aa21cff.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unit I: Climate Change Module</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="reproducing-the-hockey-stick-and-checking-whether-we-got-it-right" class="level2">
+<h2 class="anchored" data-anchor-id="reproducing-the-hockey-stick-and-checking-whether-we-got-it-right">Reproducing the hockey stick, and checking whether we got it right</h2>
+<p>We reproduced the famous hockey stick curve from <a href="https://doi.org/10.1038/33859">Mann et al (1998)</a>.</p>
+</section>
+<section id="rules-of-engagement" class="level2">
+<h2 class="anchored" data-anchor-id="rules-of-engagement">Rules of engagement</h2>
+<ul>
+<li><strong>Plan mode only.</strong> You review and approve the plan before any code runs.</li>
+<li><strong>Keep your prompts.</strong> Record what you asked for. The prompt is part of your method.</li>
+<li><strong>Never report a number you have not checked.</strong> Unverified or fabricated data is the one automatic-failure condition in this module, and it is no less serious because a model produced it.</li>
+</ul>
+<p>Setup, GitHub authentication, and model configuration are on the <a href="https://espm-157.carlboettiger.info/">course website</a>.</p>
+<section id="verification-block" class="level3">
+<h3 class="anchored" data-anchor-id="verification-block">Verification block</h3>
+<p>Every dataset gets these five questions answered, in your own words, <strong>before</strong> you plot it. Each part below ends with one.</p>
+<ol type="1">
+<li><strong>Extent</strong> — how many rows, what time range, and does that match the source documentation?</li>
+<li><strong>Missing data</strong> — how is it encoded, and did your parser catch it?</li>
+<li><strong>Units</strong> — what are they, and where in the source is that stated?</li>
+<li><strong>Completeness</strong> — the whole dataset, or one piece of it?</li>
+<li><strong>Cross-check</strong> — one value confirmed against an independent source.</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-1-the-code-you-didnt-write" class="level1">
+<h1>Part 1: The code you didn’t write</h1>
+<p>Mauna Loa monthly CO2: <a href="https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt" class="uri">https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt</a></p>
+<p>Below is working code for that file. It runs and it produces a plausible plot.</p>
+<div id="d742ddd4" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-03T18:38:12.346839Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-03T18:38:12.346610Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-03T18:38:12.875279Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-03T18:38:12.874409Z&quot;}}" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="83789667" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-03T18:38:12.877664Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-03T18:38:12.877366Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-03T18:38:13.044685Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-03T18:38:13.043988Z&quot;}}" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [<span class="st">'year'</span>, <span class="st">'month'</span>, <span class="st">'decimal_date'</span>, <span class="st">'average'</span>, <span class="st">'smooth'</span>, <span class="st">'std_days'</span>, <span class="st">'uncertainty'</span>, <span class="st">'empty'</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                  sep <span class="op">=</span> <span class="st">'</span><span class="er">\</span><span class="st">s+'</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                  comment <span class="op">=</span> <span class="st">'#'</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                  header <span class="op">=</span> <span class="va">None</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                  names <span class="op">=</span> columns</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                  )</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>&lt;&gt;:3: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+&lt;&gt;:3: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.
+/tmp/ipykernel_1469/60946832.py:3: SyntaxWarning: "\s" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\s"? A raw string is also an option.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">month</th>
+<th data-quarto-table-cell-role="th">decimal_date</th>
+<th data-quarto-table-cell-role="th">average</th>
+<th data-quarto-table-cell-role="th">smooth</th>
+<th data-quarto-table-cell-role="th">std_days</th>
+<th data-quarto-table-cell-role="th">uncertainty</th>
+<th data-quarto-table-cell-role="th">empty</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>1958</td>
+<td>3</td>
+<td>1958.2027</td>
+<td>315.71</td>
+<td>314.44</td>
+<td>-1</td>
+<td>-9.99</td>
+<td>-0.99</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>1958</td>
+<td>4</td>
+<td>1958.2877</td>
+<td>317.45</td>
+<td>315.16</td>
+<td>-1</td>
+<td>-9.99</td>
+<td>-0.99</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>1958</td>
+<td>5</td>
+<td>1958.3699</td>
+<td>317.51</td>
+<td>314.69</td>
+<td>-1</td>
+<td>-9.99</td>
+<td>-0.99</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>1958</td>
+<td>6</td>
+<td>1958.4548</td>
+<td>317.27</td>
+<td>315.15</td>
+<td>-1</td>
+<td>-9.99</td>
+<td>-0.99</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>1958</td>
+<td>7</td>
+<td>1958.5370</td>
+<td>315.87</td>
+<td>315.20</td>
+<td>-1</td>
+<td>-9.99</td>
+<td>-0.99</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">816</th>
+<td>2026</td>
+<td>3</td>
+<td>2026.2083</td>
+<td>430.15</td>
+<td>428.69</td>
+<td>26</td>
+<td>0.87</td>
+<td>0.33</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">817</th>
+<td>2026</td>
+<td>4</td>
+<td>2026.2917</td>
+<td>431.12</td>
+<td>428.62</td>
+<td>23</td>
+<td>1.16</td>
+<td>0.46</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">818</th>
+<td>2026</td>
+<td>5</td>
+<td>2026.3750</td>
+<td>432.34</td>
+<td>429.05</td>
+<td>17</td>
+<td>0.67</td>
+<td>0.31</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">819</th>
+<td>2026</td>
+<td>6</td>
+<td>2026.4583</td>
+<td>431.44</td>
+<td>429.04</td>
+<td>19</td>
+<td>0.28</td>
+<td>0.12</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">820</th>
+<td>2026</td>
+<td>7</td>
+<td>2026.5417</td>
+<td>429.12</td>
+<td>428.83</td>
+<td>21</td>
+<td>0.59</td>
+<td>0.25</td>
+</tr>
+</tbody>
+</table>
+
+<p>821 rows × 8 columns</p>
+</div>
+</div>
+</div>
+<div id="ea781626" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-03T18:38:13.046813Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-03T18:38:13.046556Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-03T18:38:13.684369Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-03T18:38:13.683704Z&quot;}}" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ggplot(df, aes(x<span class="op">=</span><span class="st">"decimal_date"</span>, y<span class="op">=</span><span class="st">"average"</span>)) <span class="op">+</span> geom_line()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+<figure class="figure">
+<p><img src="climate_files/figure-html/cell-4-output-1.png" width="640" height="480" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="task-1.1-read-the-source-not-the-code" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.1-read-the-source-not-the-code">Task 1.1: Read the source, not the code</h3>
+<p>That <code>columns</code> list was written by hand. Open the raw file and read its header block, then check every name against what the header says the column holds. Report any that misstate it, and say which of those would change a published figure if nobody noticed.</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-1.2-missing-values" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2-missing-values">Task 1.2: Missing values</h3>
+<p>How does this file encode a measurement that was not made? Verify it in the raw file, count the affected rows per column, and say what a naive <code>mean()</code>, <code>min()</code>, or error bar would report if you left them in. State what you did about it and why.</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-1.3-what-the-numeric-columns-cannot-tell-you" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.3-what-the-numeric-columns-cannot-tell-you">Task 1.3: What the numeric columns cannot tell you</h3>
+<p>The header block contains prose notes as well as column definitions. Read them.</p>
+<p>Does anything there change how you would plot or interpret this series? Show your evidence in the data rather than asserting it, and say whether a model reading only the numeric columns would have any way to know.</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-1.4-check-whether-a-better-door-exists" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4-check-whether-a-better-door-exists">Task 1.4: Check whether a better door exists</h3>
+<p>Before you fix a parser, find out whether you need one. NOAA distributes this same monthly record in more than one format: <a href="https://gml.noaa.gov/ccgg/trends/data.html" class="uri">https://gml.noaa.gov/ccgg/trends/data.html</a></p>
+<p>Load an alternative distribution. Which of the problems you found above does switching formats solve, and which does it not?</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-1.5-the-other-library" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.5-the-other-library">Task 1.5: The other library</h3>
+<p>Now try to load the original <code>.txt</code> with <code>ibis</code> instead of <code>pandas</code>. Report what happens.</p>
+<p>Explain the result in terms of the <em>file</em>, not the library. What does it do to a rule like “always use <code>ibis</code>”?</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="verification-block-1" class="level3">
+<h3 class="anchored" data-anchor-id="verification-block-1">🔍 Verification block 1</h3>
+<ol type="1">
+<li>Extent:</li>
+<li>Missing data:</li>
+<li>Units:</li>
+<li>Completeness:</li>
+<li>Cross-check:</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-2-arctic-sea-ice" class="level1">
+<h1>Part 2: Arctic sea ice</h1>
+<p>National Snow and Ice Data Center, sea ice index G02135:</p>
+<ul>
+<li>Documentation: <a href="https://nsidc.org/data/G02135" class="uri">https://nsidc.org/data/G02135</a></li>
+<li>Data directory: <a href="https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/" class="uri">https://noaadata.apps.nsidc.org/NOAA/G02135/north/monthly/data/</a></li>
+</ul>
+<section id="task-2.1-ask-first-look-second" class="level3">
+<h3 class="anchored" data-anchor-id="task-2.1-ask-first-look-second">Task 2.1: Ask first, look second</h3>
+<p>Before opening that directory yourself, ask your model to load Arctic sea ice extent and plot the trend. Let it produce a plan.</p>
+<p><strong>Record the prompt you used:</strong></p>
+<pre><code>[paste your prompt here]</code></pre>
+</section>
+<section id="task-2.2-what-did-it-actually-load" class="level3">
+<h3 class="anchored" data-anchor-id="task-2.2-what-did-it-actually-load">Task 2.2: What did it actually load?</h3>
+<p>Now open the data directory and look at what is there.</p>
+<p>Check the URL the model’s code used against the directory listing <em>before</em> you run anything. Did it point at a file that exists? If it ran, how much of the record does the plot actually show, and is the title honest? If it failed, would you have predicted that failure from reading the code?</p>
+<p>A model that has never seen this directory still has to produce a filename. Note where it got one.</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-2.3-build-the-complete-record" class="level3">
+<h3 class="anchored" data-anchor-id="task-2.3-build-the-complete-record">Task 2.3: Build the complete record</h3>
+<p>Load the full dataset and plot sea ice extent over time.</p>
+<p>Then make a scientific decision and defend it: the September minimum is the standard index for Arctic sea ice loss, and it is not the same thing as the annual mean. Which does your analysis report, and why is that right for the question you are asking?</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="verification-block-2" class="level3">
+<h3 class="anchored" data-anchor-id="verification-block-2">🔍 Verification block 2</h3>
+<ol type="1">
+<li>Extent:</li>
+<li>Missing data:</li>
+<li>Units:</li>
+<li>Completeness:</li>
+<li>Cross-check:</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-3-emissions-by-industry" class="level1">
+<h1>Part 3: Emissions by industry</h1>
+<p><a href="https://www.exiobase.eu/">EXIOBASE</a> is a multi-regional, environmentally-extended input-output database: economic flows between industries and regions worldwide, with the emissions attached to them. It lets you ask which <em>industries</em> drive emissions, not just which countries.</p>
+<p>We use the cloud-optimized Parquet copy at <a href="https://source.coop/youssef-harby/exiobase-3">source.coop/youssef-harby/exiobase-3</a>. The inter-industry transaction table <code>Z</code> for one year:</p>
+<pre><code>https://data.source.coop/youssef-harby/exiobase-3/4588235/parquet/year=2022/format=ixi/matrix=Z/data.parquet</code></pre>
+<section id="task-3.1-ask-without-guidance" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.1-ask-without-guidance">Task 3.1: Ask without guidance</h3>
+<p>Ask your model to compute total industrial output by origin region for 2022 from that file. Do not tell it which library to use.</p>
+<p><strong>Record the prompt you used:</strong></p>
+<pre><code>[paste your prompt here]</code></pre>
+<p><strong>Which library did it choose, unprompted?</strong></p>
+</section>
+<section id="task-3.2-measure-what-it-cost" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.2-measure-what-it-cost">Task 3.2: Measure what it cost</h3>
+<p>Run the code it wrote inside the harness below, which reports peak memory and wall time. Your session has roughly <strong>4 GB of RAM</strong>. Report what happens, including if it does not finish.</p>
+<div id="767721b7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;execution&quot;,&quot;value&quot;:{&quot;iopub.execute_input&quot;:&quot;2026-09-03T18:38:13.687649Z&quot;,&quot;iopub.status.busy&quot;:&quot;2026-09-03T18:38:13.687322Z&quot;,&quot;iopub.status.idle&quot;:&quot;2026-09-03T18:38:13.691342Z&quot;,&quot;shell.execute_reply&quot;:&quot;2026-09-03T18:38:13.690420Z&quot;}}" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> resource, time, contextlib</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">@contextlib.contextmanager</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> measure(label):</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    t0 <span class="op">=</span> time.time()</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">finally</span>:</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        peak <span class="op">=</span> resource.getrusage(resource.RUSAGE_SELF).ru_maxrss <span class="op">/</span> <span class="dv">1024</span><span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: peak memory </span><span class="sc">{</span>peak<span class="sc">:.2f}</span><span class="ss"> GB, elapsed </span><span class="sc">{</span>time<span class="sc">.</span>time() <span class="op">-</span> t0<span class="sc">:.1f}</span><span class="ss">s"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># with measure("pandas"):</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#     result = ...</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="task-3.3-now-constrain-it" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.3-now-constrain-it">Task 3.3: Now constrain it</h3>
+<p>Ask again, this time requiring <code>ibis</code> with the DuckDB backend. Measure the same way.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>approach</th>
+<th>peak memory</th>
+<th>elapsed</th>
+<th>did it finish?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>unguided</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ibis / duckdb</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Do the two approaches give the same answer?</strong> Check, do not assume. If they disagree, that is a finding worth more than either number alone.</p>
+</section>
+<section id="task-3.4-why-did-it-choose-that" class="level3">
+<h3 class="anchored" data-anchor-id="task-3.4-why-did-it-choose-that">Task 3.4: Why did it choose that?</h3>
+<p>Why does a model, asked to analyze data with no further guidance, reach for the library it reached for? Consider what its training data looks like.</p>
+<ul>
+<li>What does it mean that the tool most likely to be <em>suggested</em> is the one most represented in code written years ago?</li>
+<li>On the evidence of this exercise, what is the human actually contributing?</li>
+<li>What would have happened if nobody in the room knew the alternative existed?</li>
+<li>In Task 1.5 you found the reverse case. State the rule that covers both, without naming a library.</li>
+</ul>
+<p><strong>Your answer:</strong></p>
+<hr>
+</section>
+</section>
+<section id="part-4-which-co2" class="level1">
+<h1>Part 4: Which CO2?</h1>
+<p>The <code>F_satellite</code> table holds the environmental extensions — emissions and resource flows attached to each industry and region.</p>
+<pre><code>https://data.source.coop/youssef-harby/exiobase-3/4588235/parquet/year=2022/format=ixi/matrix=F_satellite/data.parquet</code></pre>
+<section id="task-4.1-survey-before-you-filter" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.1-survey-before-you-filter">Task 4.1: Survey before you filter</h3>
+<p>Load the table. Before writing any filter, report how many distinct values the <code>stressor</code> column contains, how many of them mention CO2 (with their units and totals), and how many distinct units appear in the <code>unit</code> column across the whole table.</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-4.2-what-did-you-just-add-together" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.2-what-did-you-just-add-together">Task 4.2: What did you just add together?</h3>
+<p>Group by region and sum <code>value</code> across all stressors. Then look at what that sum contains.</p>
+<p>How many different units went into it? Is the result a mass, a volume, a currency, or a number with no meaning? What is the ratio between the two most common units, and what would mixing them do to a national total?</p>
+<p><strong>Your answer:</strong></p>
+</section>
+<section id="task-4.3-choose-your-stressors-and-defend-the-choice" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.3-choose-your-stressors-and-defend-the-choice">Task 4.3: Choose your stressors, and defend the choice</h3>
+<p>Compute total CO2 emissions by region for 2022.</p>
+<p>You must decide which stressors belong in that total. This is a scientific judgment, not a string-matching exercise: filtering too narrowly omits real emissions, and matching every name containing <code>"CO2"</code> includes flows that standard greenhouse-gas accounting deliberately excludes. Find out which, and on what grounds.</p>
+<p>Ask your model which to include, then check its reasoning against the accounting convention.</p>
+<p><strong>Which stressors did you include, and why? Which did you exclude, and why?</strong></p>
+</section>
+<section id="task-4.4-reconcile-against-an-independent-source" class="level3">
+<h3 class="anchored" data-anchor-id="task-4.4-reconcile-against-an-independent-source">Task 4.4: Reconcile against an independent source</h3>
+<p>Compare your EXIOBASE national totals against Our World in Data: <a href="https://github.com/owid/co2-data/raw/master/owid-co2-data.csv" class="uri">https://github.com/owid/co2-data/raw/master/owid-co2-data.csv</a></p>
+<p>They will not match. Pick one country and quantify the gap:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>value</th>
+<th>units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OWID total</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Your EXIOBASE total</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Absolute difference</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Relative difference</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Then explain it. The two sources do not measure the same thing — establish what each one actually counts before you attribute the gap to anything. Candidates to test rather than assert: accounting scope, gas coverage, sectoral boundaries, your stressor set from 4.3, and year alignment.</p>
+<p><strong>A country that imports most of its manufactured goods should show a particular direction of gap. Does yours? What does that tell you about the two accounting systems?</strong></p>
+<p><strong>Your reconciliation:</strong></p>
+</section>
+<section id="verification-block-3" class="level3">
+<h3 class="anchored" data-anchor-id="verification-block-3">🔍 Verification block 3</h3>
+<ol type="1">
+<li>Extent:</li>
+<li>Missing data:</li>
+<li>Units:</li>
+<li>Completeness:</li>
+<li>Cross-check:</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="part-5-the-hockey-stick" class="level1">
+<h1>Part 5: The hockey stick</h1>
+<p>Instrumental records cover roughly the last century and a half. To judge whether recent change is unusual you need a longer baseline, which means proxy records rather than thermometers.</p>
+<p><strong>Vostok ice core</strong>, back roughly 400,000 years:</p>
+<ul>
+<li>Description: <a href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html" class="uri">https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html</a></li>
+<li>Data: <a href="https://doi.org/10.3334/CDIAC/ATG.009" class="uri">https://doi.org/10.3334/CDIAC/ATG.009</a></li>
+</ul>
+<section id="task-5.1-load-the-ice-core-record" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.1-load-the-ice-core-record">Task 5.1: Load the ice core record</h3>
+<p>Load it, and read its documentation carefully enough to say what its index actually is and how it is sampled. Both bear on what you can legitimately plot next to a modern monthly series.</p>
+</section>
+<section id="task-5.2-put-modern-co2-in-geological-context" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.2-put-modern-co2-in-geological-context">Task 5.2: Put modern CO2 in geological context</h3>
+<p>Combine the Vostok record with the Mauna Loa series from Part 1 in a single figure.</p>
+<p>Getting this figure to be <em>honest</em> is the hard part:</p>
+<ul>
+<li>The two series have very different sampling resolution. What does a shared axis imply that may not be true?</li>
+<li>Where do the records join, and are they measuring the same quantity the same way?</li>
+<li>What does the modern value look like against the full 400,000-year range?</li>
+</ul>
+</section>
+<section id="task-5.3-interpret" class="level3">
+<h3 class="anchored" data-anchor-id="task-5.3-interpret">Task 5.3: Interpret</h3>
+<p>Relative to <a href="https://doi.org/10.1038/33859">Mann et al (1998)</a>:</p>
+<ul>
+<li>Does your reconstruction support the paper’s central claim?</li>
+<li>Where does it differ, and why — more recent data, different proxies, different processing?</li>
+<li>What in your figure is a genuine finding, and what is an artifact of a choice you made?</li>
+</ul>
+<p><strong>Your interpretation:</strong></p>
+<hr>
+</section>
+</section>
+<section id="part-6-reflection" class="level1">
+<h1>Part 6: Reflection</h1>
+<ol type="1">
+<li><strong>Failure inventory.</strong> List every case where the model produced code that ran without error but was wrong. What was wrong, and what tipped you off?</li>
+<li><strong>Detection.</strong> Which of those would you have caught from the plot alone? Which required going back to the source documentation?</li>
+<li><strong>Division of labor.</strong> What did you contribute that the model did not? If the answer for some task is “nothing”, say so.</li>
+<li><strong>Plan mode.</strong> Where did approving the plan catch something? Where was it just friction?</li>
+<li><strong>Tool choice.</strong> You have now seen the same task done two ways, and data read locally versus streamed. What decides which is right, and who makes that decision?</li>
+</ol>
+<p><strong>Your reflection:</strong></p>
+<ol type="1">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<hr>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Notebook runs top to bottom without errors</label></li>
+<li><label><input type="checkbox">All three verification blocks completed</label></li>
+<li><label><input type="checkbox">Prompts recorded where asked (Tasks 2.1, 3.1)</label></li>
+<li><label><input type="checkbox">Memory and timing table filled in (Task 3.3)</label></li>
+<li><label><input type="checkbox">Stressor selection defended (Task 4.3) and reconciliation quantified (Task 4.4)</label></li>
+<li><label><input type="checkbox">Hockey stick figure with the modern record in geological context (Task 5.2)</label></li>
+<li><label><input type="checkbox">Reflection complete (Part 6)</label></li>
+<li><label><input type="checkbox">README updated with team members, badge, and description</label></li>
+<li><label><input type="checkbox">Repository passes its GitHub Actions check</label></li>
+</ul>
+<p>See <a href="rubric.md">rubric.md</a> for scoring.</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
