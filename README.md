@@ -1,18 +1,21 @@
 # Exploration of Ice Sheet
 
-<!-- EDIT with your badge link -->
-[![Reproducibility Check](https://github.com/espm-157/climate-python-template/actions/workflows/main.yml/badge.svg)](https://github.com/espm-157/climate-python-template/actions/workflows/main.yml)
+<!-- EDIT with your badge link --> https://github.com/lytrang-star/mod1-climate/actions/workflows/main.yml
+
+[![Reproducibility Check](https://github.com/lytrang-star/mod1-climate/actions/workflows/main.yml/badge.svg)](https://github.com/lytrang-star/mod1-climate/actions/workflows/main.yml)
 
 ## Team Members
 
 🦸 Trang Ly <lytrang@berkeley.edu>
-🦹 Jiyun Ahn 
+🦹 Jiyun Ahn <jiyuna@berkeley.edu>
 
 
 #Our exploration of artic ice sheet change
 
 
-## 📖 Content Overview
+## 📖 Repository Overview
+
+INCLUDE REPOS DESCRIPTION HERE
 
 [💻 Assignment template](climate.ipynb)  
 [💯 Assignment rubric](rubric.md)  

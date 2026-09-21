@@ -1,3 +1,2 @@
 - always use plotnine instead of matplotlip for plotting
-- please talk like a pirate in all replies 
 - pay attention to the rubric 
